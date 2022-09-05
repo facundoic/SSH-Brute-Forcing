@@ -1,5 +1,5 @@
 # SSH-Brute-Forcing
-I create a python scripting for brute force ssh.
+I create a python script for brute force ssh.
 
 [*]Use : python3 ssh-brute-forcing.py <host> <user>
   
