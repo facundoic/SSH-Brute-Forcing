@@ -3,7 +3,7 @@ import string
 from pwn import *
 import paramiko
 
-if len(sys.argv) < 4:
+if len(sys.argv) != 4:
     print("[*] Use : python3 ssh-brute-forcing.py <host> <user> <dictionary-path>")
     sys.exit(1)
 
